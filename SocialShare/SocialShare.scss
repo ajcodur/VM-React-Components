@@ -1,0 +1,67 @@
+/* SocialShare.css */
+
+.social-share {
+    position: relative;
+    .category-heading {
+      margin-bottom: rem(10);
+      letter-spacing: rem(1);
+      line-height: rem(13);
+    }
+  
+    .share-button {
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      margin-right: rem(16);
+      border: 0;
+  
+      &.facebook {
+        background-image: url("../resources/icons/fb-icon.svg");
+  
+        &:hover {
+          background-image: url("../resources/icons/fb-icon-hover.svg");
+        }
+      }
+  
+      &.pinterest {
+        background-image: url("../resources/icons/pinterest-icon.svg");
+  
+        &:hover {
+          background-image: url("../resources/icons/pinterest-icon-hover.svg");
+        }
+      }
+    }
+  
+    .copy-link-button {
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      border: 0;
+      background-image: url("../resources/icons/copy-link-icon.svg");
+  
+      &:hover {
+        background-image: url("../resources/icons/copy-link-icon-hover.svg");
+      }
+    }
+  
+    .tooltip {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      top: 70px;
+      left: 0;
+      //transform: translateX(-50%);
+    }
+  
+    .tooltip.active {
+      display: block;
+    }
+  }
+  

@@ -1,0 +1,145 @@
+.block__masthead-home {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    .video_wrapper {
+      position: absolute;
+      padding: 0 4% 5% 5%;
+      right: -5%;
+      bottom: 10%;
+      z-index: 1;
+      height: 90%;
+      aspect-ratio: 16 / 9;
+  
+      .video_container {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        position: relative;
+  
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: rgba(0, 0, 0, 0.3);
+          left: 0;
+          top: 0;
+        }
+      }
+  
+      video {
+        object-fit: cover;
+        object-position: bottom center;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+  
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-image: url(../resources/images/chevron.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+  
+      .wine-bottle {
+        position: absolute;
+        aspect-ratio: 3 / 5;
+        bottom: -10%;
+        right: 42%;
+        z-index: 99;
+        max-width: 26%;
+      }
+      @media only screen and (min-width: $desktop-hidpi) {
+        right: 0%;
+        height: 80%;
+        bottom: 20%;
+        .wine-bottle {
+          max-width: 23%;
+          bottom: -10%;
+        }
+      }
+      @include desktop-large {
+        right: -5%;
+        height: 82%;
+        bottom: 18%;
+        .wine-bottle {
+          max-width: 28%;
+          bottom: -20%;
+          right: 40%;
+        }
+      }
+      @media only screen and (max-width: $desktop-large) {
+        right: -10%;
+        height: 80%;
+        bottom: 20%;
+      }
+      @media only screen and (max-width: $desktop) {
+        //width: 98%;
+        height: 70%;
+        bottom: 30%;
+      }
+    }
+  
+    @media only screen and (max-width: $base) {
+      min-height: 40vh;
+      .video_wrapper {
+        height: 90%;
+        bottom: 10%;
+      }
+    }
+  
+    @media only screen and (max-width: $mobile-landscape) {
+      overflow: unset;
+      min-height: unset;
+      .video_wrapper {
+        position: relative;
+        right: unset;
+        bottom: unset;
+        width: 100%;
+        padding: 0 0 130px 0;
+        aspect-ratio: unset;
+        height: auto;
+  
+        .video_container {
+          aspect-ratio: 1 / 1;
+  
+          video {
+            position: relative;
+          }
+        }
+  
+        &::after {
+          background-position: bottom 50px center;
+        }
+        .wine-bottle {
+          max-width: 60%;
+          right: 30%;
+          top: 30%;
+          bottom: unset;
+        }
+      }
+    }
+  
+    &__container {
+      .content_block {
+        align-items: flex-start;
+        z-index: 2;
+  
+        p {
+          margin-bottom: rem(15);
+        }
+      }
+    }
+  }
+  
